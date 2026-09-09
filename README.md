@@ -1,5 +1,6 @@
 # RealEstate CRM
-![Preview Image](https://github.com/manishvishwakarma89/realestate-management-crm/images/rcm-dashboard.png)
+<img width="1846" height="803" alt="rcm-dashboard" src="https://github.com/user-attachments/assets/d9987105-fb8c-48b2-84ba-5d946a6c8a49" />
+
 
 
 A full-stack Real Estate CRM application for managing properties, leads, and contacts, with role-based access for Admins, Managers, and Agents.
