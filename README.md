@@ -1,4 +1,6 @@
 # RealEstate CRM
+![Preview Image](https://github.com/manishvishwakarma89/realestate-management-crm/images/main.jpg)
+
 
 A full-stack Real Estate CRM application for managing properties, leads, and contacts, with role-based access for Admins, Managers, and Agents.
 
