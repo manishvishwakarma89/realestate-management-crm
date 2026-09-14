@@ -1,29 +1,36 @@
+node_modules
+npm-debug.log
+.env
+.env.*
+!.env.example
+logs
+frontend/dist/
+frontend/start.sh
+generate-api-key.js
+hello-floci.txt
+nginx.conf
+package.json
+front-apikey.js
+backend/apikey.js
+backend/start.sh
+backend/.env
+backend/server-json.js
+.txt.*
 # Dependencies
 node_modules/
-frontend/node_modules/
-backend/node_modules/
-
-# Environment files (keep .env.sample tracked, ignore actual .env)
-.env
-frontend/.env
-backend/.env
-
-# Docker volumes / persisted data
-backend/mongo-data/
-backend/db.json
-backend/json-data/
 
 # Build output
 frontend/dist/
-frontend/build/
+build.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
 
 # Logs
 *.log
 npm-debug.log*
 
-# OS/editor junk
+# OS
 .DS_Store
-.vscode/
-.idea/
-backend/mongo-data/
-backend/db.json
