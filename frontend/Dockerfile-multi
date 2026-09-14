@@ -1,0 +1,39 @@
+# ===============================================
+# STAGE 1: Build Stage (with all dependencies)
+# ===============================================
+FROM node:21-alpine AS builder
+
+ #Add security labels
+LABEL maintainer="manish.kumar.v@ramanujan.du.ac.in"
+LABEL description="Production-ready Node.js application"
+
+# Set working directory
+WORKDIR /app
+ 
+# Copy package.json and package-lock.json for dependency installation
+COPY package*.json ./
+# Install dependencies using npm ci (more reliable than npm install)
+RUN npm ci --only=production && \
+    npm cache clean --force
+COPY . .
+# ===============================================
+# STAGE 2: Runtime Stage (minimal, security-focused)
+# ===============================================
+FROM node:21-alpine
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser
+# Set working directory
+WORKDIR /app
+# Copy only necessary files from builder stage
+COPY --from=builder --chown=appuser:appgroup /app/node_modules ./node_modules
+COPY --from=builder --chown=appuser:appgroup /app/package*.json ./
+COPY --chown=appuser:appgroup . .
+# Switch to non-root user
+USER appuser
+# Expose the port the app runs on
+EXPOSE 3001
+# Production command (use appropriate script from your package.json)
+CMD ["npm", "run", "dev", "--", "--host"]
+
+
+

@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "_id": "1",
+      "name": "Admin User",
+      "email": "admin@crm.com",
+      "password": "$2a$10$M9WFyE.F684KBZxbosRO3O1BR8jHWhVinLsazLhZgGBOZO9GBAZ2e",
+      "role": "admin",
+      "phone": "9999999999",
+      "isActive": true
+    },
+    {
+      "_id": "2",
+      "name": "Manager User",
+      "email": "manager@crm.com",
+      "password": "$2a$10$FOtRNQCRQZHYrQt6L1079O14M99cc52WWSlFnlifY11ROaEuA/dPm",
+      "role": "manager",
+      "phone": "8888888888",
+      "isActive": true
+    },
+    {
+      "_id": "3",
+      "name": "Agent User",
+      "email": "agent@crm.com",
+      "password": "$2a$10$Tn1n81B.frypnseRiHAFAOxkxs6rYs5RYOT5b74XkNybV8Vl42nay",
+      "role": "agent",
+      "phone": "7777777777",
+      "isActive": true
+    }
+  ],
+  "properties": [
+    {
+      "_id": "1",
+      "title": "Luxury Villa",
+      "type": "villa",
+      "status": "available",
+      "price": 50000000,
+      "area": 5000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "address": {
+        "city": "Mumbai",
+        "state": "Maharashtra"
+      },
+      "createdAt": "2026-09-14T13:09:09.438Z"
+    },
+    {
+      "_id": "2",
+      "title": "Modern Apartment",
+      "type": "apartment",
+      "status": "available",
+      "price": 15000000,
+      "area": 2000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "address": {
+        "city": "Delhi",
+        "state": "Delhi"
+      },
+      "createdAt": "2026-09-14T13:09:09.439Z"
+    }
+  ],
+  "leads": [],
+  "contacts": []
+}

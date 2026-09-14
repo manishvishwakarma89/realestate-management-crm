@@ -21,7 +21,7 @@ export default function Contacts() {
   const fetchContacts = async () => {
     try {
       const res = await contacts.getAll({ search, ...filters });
-      setContactsList(res.data.contacts);
+      setContactsList(res.data);
     } catch (err) { console.error(err); }
   };
 

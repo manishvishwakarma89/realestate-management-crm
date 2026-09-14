@@ -73,7 +73,6 @@ COPY --from=builder --chown=nonroot:nonroot /app/routes ./routes
 COPY --from=builder --chown=nonroot:nonroot /app/models ./models
 COPY --from=builder --chown=nonroot:nonroot /app/middleware ./middleware
 COPY --from=builder --chown=nonroot:nonroot /app/controllers ./controllers
-COPY --from=builder --chown=nonroot:nonroot /app/config ./config
 
 EXPOSE 5000
 
