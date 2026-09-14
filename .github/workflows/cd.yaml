@@ -24,12 +24,19 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # 3. Pull new images and restart the containers locally
+            # 3. Re-create the env files inside the workspace before composing up
+      - name: Create Environment Files from Secrets
+        run: |
+          echo "${{ secrets.BACKEND_ENV }}" > ./backend/.env
+          echo "${{ secrets.FRONTEND_ENV }}" > ./frontend/.env
+
+      # 4. Pull new images and restart the containers locally
       - name: Deploy Live Application
         run: |
           echo "Deploying latest application stack..."
           docker compose down
           docker compose up -d --pull always
-          
+  
       # 4. Optional: Clean up dangling, unused older image layers to save disk space
       - name: System Prune
         run: docker image prune -f
