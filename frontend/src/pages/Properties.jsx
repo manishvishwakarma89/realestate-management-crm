@@ -23,7 +23,7 @@ export default function Properties() {
   const fetchProperties = async () => {
     try {
       const res = await properties.getAll({ search, ...filters });
-      setProperties(res.data.properties);
+      setProperties(res.data);
     } catch (err) { console.error(err); }
   };
 

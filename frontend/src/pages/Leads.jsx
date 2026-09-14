@@ -24,7 +24,7 @@ export default function Leads() {
   const fetchLeads = async () => {
     try {
       const res = await leads.getAll({ search, ...filters });
-      setLeadsList(res.data.leads);
+      setLeadsList(res.data);
     } catch (err) { console.error(err); }
   };
 
