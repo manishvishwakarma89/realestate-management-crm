@@ -67,8 +67,7 @@ COPY --from=prod-dependencies --chown=nonroot:nonroot /app/node_modules ./node_m
 
 # App code (built output + package files + logs dir + db.json + server files) from builder stage
 COPY --from=builder --chown=nonroot:nonroot /app/package*.json ./
-COPY --from=builder --chown=nonroot:nonroot /app/db.json ./
-COPY --from=builder --chown=nonroot:nonroot /app/server-json.js ./
+COPY --from=builder --chown=nonroot:nonroot /app/db.json ./db.json
 COPY --from=builder --chown=nonroot:nonroot /app/routes ./routes
 COPY --from=builder --chown=nonroot:nonroot /app/models ./models
 COPY --from=builder --chown=nonroot:nonroot /app/middleware ./middleware

@@ -25,4 +25,9 @@ const seed = async () => {
   console.log('  Agent:    agent@crm.com / agent123');
 };
 
-seed();
+module.exports = seed;
+
+// Run if executed directly
+if (require.main === module) {
+  seed();
+}
