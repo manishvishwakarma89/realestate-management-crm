@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./frontend
-          file: ./frontend/Dockerfile.distroless
+          file: ./frontend/Dockerfile-multi
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/estate-frontend:${{ github.sha }}
